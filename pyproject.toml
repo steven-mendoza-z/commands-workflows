@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "commands-workflows"
+version = "0.1.0"
+description = "CLI to manage named command workflows with placeholders, defaults and reusable commands."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  { name = "Steven Mendoza" }
+]
+keywords = ["commands", "workflow", "cli", "automation"]
+
+dependencies = [
+  "click==8.2.1",
+  "colorama==0.4.6",
+  "inquirerpy==0.3.4",
+  "pfzy==0.3.4",
+  "prompt_toolkit==3.0.51",
+  "PyYAML==6.0.2",
+  "wcwidth==0.2.13"
+]
+
+[project.urls]
+Homepage = "https://github.com/steven-mendoza-z/commands-workflows"
+Documentation = "https://github.com/steven-mendoza-z/commands-workflows"
+Source = "https://github.com/steven-mendoza-z/commands-workflows"
+Issues = "https://github.com/steven-mendoza-z/commands-workflows/issues"
+
+[project.scripts]
+mssh = "mssh.cli:main"
+cmdw = "cmdw.cli:main"
+
+[tool.setuptools.packages.find]
+exclude = ["tests*", "docs*", "workspace*", "venv*"]
