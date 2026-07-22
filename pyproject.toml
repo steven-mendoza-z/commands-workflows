@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "commands-workflows"
 version = "0.1.0"
-description = "CLI to manage named command workflows with placeholders, defaults and reusable commands."
+description = "Command workflow automation for repeatable development, deployment, and operations tasks."
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [
   { name = "Steven Mendoza" }
 ]
-keywords = ["commands", "workflow", "cli", "automation"]
+keywords = ["commands", "workflow", "cli", "automation", "devops", "productivity"]
 
 dependencies = [
   "click==8.2.1",

@@ -3,6 +3,7 @@ from pathlib import Path
 
 WORKFLOWS_DIR = Path.home() / ".cmdw"
 WORKFLOWS_PATH = WORKFLOWS_DIR / "workflows.json"
+GLOBALS_PATH = WORKFLOWS_DIR / "globals.json"
 
 
 def _ensure_dir():
@@ -23,4 +24,21 @@ def load_workflows():
 def save_workflows(data):
     _ensure_dir()
     with WORKFLOWS_PATH.open("w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+
+def load_globals():
+    _ensure_dir()
+    if not GLOBALS_PATH.exists():
+        return {}
+    try:
+        with GLOBALS_PATH.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def save_globals(data):
+    _ensure_dir()
+    with GLOBALS_PATH.open("w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
